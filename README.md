@@ -35,6 +35,9 @@ $ git clone https://github.com/nl8590687/ASRT_SpeechRecognition.git
 或者您也可以通过 "Fork" 按钮，将本项目Copy一份副本，然后通过您自己的SSH密钥克隆到本地。
 
 通过git克隆仓库以后，进入项目根目录；并创建子目录 `dataset/` (可使用软链接代替)，然后将下载好的数据集直接解压进去
+
+注意，当前版本中，Thchs30和ST-CMDS两个数据集都必须下载使用，缺一不可，并且使用其他数据集需要修改代码。
+
 ```shell
 $ cd ASRT_SpeechRecognition
 
@@ -153,16 +156,35 @@ Python的依赖库
 
 * **aidatatang_200zh**
 
-  200.zip
-[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/62/200.zip>)
-[OpenSLR国外镜像](<http://www.openslr.org/resources/62/200.zip>)
+   aidatatang_200zh.tgz
+[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/62/aidatatang_200zh.tgz>)
+[OpenSLR国外镜像](<http://www.openslr.org/resources/62/aidatatang_200zh.tgz>)
+
+* **MagicData**
+
+  train_set.tar.gz
+[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/68/train_set.tar.gz>)
+[OpenSLR国外镜像](<http://www.openslr.org/resources/68/train_set.tar.gz>)
+
+  dev_set.tar.gz
+[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/68/dev_set.tar.gz>)
+[OpenSLR国外镜像](<http://www.openslr.org/resources/68/dev_set.tar.gz>)
+
+  test_set.tar.gz
+[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/68/test_set.tar.gz>)
+[OpenSLR国外镜像](<http://www.openslr.org/resources/68/test_set.tar.gz>)
+
+  metadata.tar.gz
+[OpenSLR国内镜像](<http://cn-mirror.openslr.org/resources/68/metadata.tar.gz>)
+[OpenSLR国外镜像](<http://www.openslr.org/resources/68/metadata.tar.gz>)
 
 特别鸣谢！感谢前辈们的公开语音数据集
 
 如果提供的数据集链接无法打开和下载，请点击该链接 [OpenSLR](http://www.openslr.org)
 
-## Log
-日志链接：[进展日志](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/log.md)
+## License 开源许可协议
+
+[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687)
 
 ## Contributors 贡献者们
 

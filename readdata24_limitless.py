@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+'''
+@author: nl8590687
+一个对于单一音频时间长度不作限制的版本，正在测试
+'''
 import platform as plat
 import os
 
@@ -158,9 +161,6 @@ class DataSpeech():
 		data_input = data_input.reshape(data_input.shape[0],data_input.shape[1],1)
 		#arr_zero = np.zeros((1, 39), dtype=np.int16) #一个全是0的行向量
 		
-		#while(len(data_input)<1600): #长度不够时补全到1600
-		#	data_input = np.row_stack((data_input,arr_zero))
-		
 		#data_input = data_input.T
 		data_label = np.array(feat_out)
 		return data_input, data_label
@@ -184,9 +184,11 @@ class DataSpeech():
 		#print(input_length,len(input_length))
 		
 		while True:
-			X = np.zeros((batch_size, audio_length, 200, 1), dtype = np.float)
+			#X = np.zeros((batch_size, audio_length, 200, 1), dtype = np.float)
+			X = []
 			#y = np.zeros((batch_size, 64, self.SymbolNum), dtype=np.int16)
-			y = np.zeros((batch_size, 64), dtype=np.int16)
+			#y = np.zeros((batch_size, 64), dtype=np.int16)
+			y = []
 			
 			#generator = ImageCaptcha(width=width, height=height)
 			input_length = []
@@ -197,20 +199,22 @@ class DataSpeech():
 			for i in range(batch_size):
 				ran_num = random.randint(0,self.DataNum - 1) # 获取一个随机数
 				data_input, data_labels = self.GetData(ran_num)  # 通过随机数取一个数据
-				#data_input, data_labels = self.GetData((ran_num + i) % self.DataNum)  # 从随机数开始连续向后取一定数量数据
 				
 				# 关于下面这一行取整除以8 并加8的余数，在实际中如果遇到报错，可尝试只在有余数时+1，没有余数时+0，或者干脆都不加，只留整除
 				input_length.append(data_input.shape[0] // 8 + data_input.shape[0] % 8)
 				#print(data_input, data_labels)
 				#print('data_input长度:',len(data_input))
 				
-				X[i,0:len(data_input)] = data_input
+				#X[i,0:len(data_input)] = data_input
+				X.append(data_input)
 				#print('data_labels长度:',len(data_labels))
 				#print(data_labels)
-				y[i,0:len(data_labels)] = data_labels
+				
+				#y[i,0:len(data_labels)] = data_labels
+				y.append(data_labels)
+				
 				#print(i,y[i].shape)
-				#y[i] = y[i].T
-				#print(i,y[i].shape)
+				
 				label_length.append([len(data_labels)])
 			
 			label_length = np.matrix(label_length)

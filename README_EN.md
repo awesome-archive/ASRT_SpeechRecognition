@@ -32,6 +32,8 @@ Or you can use the "Fork" button to copy a copy of the project and then clone it
 
 After cloning the repository via git, go to the project root directory; create a subdirectory `dataset/` (you can use a soft link instead), and then extract the downloaded datasets directly into it.
 
+Note that in the current version, both the Thchs30 and ST-CMDS data sets must be downloaded and used, and using other data sets need to modify the sourece codes. 
+
 ```shell
 $ cd ASRT_SpeechRecognition
 
@@ -148,16 +150,30 @@ However, as the current international and domestic teams can achieve 98%, the ac
 
 * **aidatatang_200zh**
 
-  200.zip
-[Download](<http://www.openslr.org/resources/62/200.zip>)
+  aidatatang_200zh.tgz
+[Download](<http://www.openslr.org/resources/62/aidatatang_200zh.tgz>)
+
+* **MagicData**
+
+  train_set.tar.gz
+[Download](<http://www.openslr.org/resources/68/train_set.tar.gz>)
+
+  dev_set.tar.gz
+[Download](<http://www.openslr.org/resources/68/dev_set.tar.gz>)
+
+  test_set.tar.gz
+[Download](<http://www.openslr.org/resources/68/test_set.tar.gz>)
+
+  metadata.tar.gz
+[Download](<http://www.openslr.org/resources/68/metadata.tar.gz>)
 
 Special thanks! Thanks to the predecessors' public voice data set. 
 
 If the provided dataset link cannot be opened and downloaded, click this link [OpenSLR](http://www.openslr.org)
 
-## Logs
+## License
 
-Links: [Progress Logs](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/log.md)
+[GPL v3.0](LICENSE) © [nl8590687](https://github.com/nl8590687)
 
 ## Contributors
 [@zw76859420](https://github.com/zw76859420) 
